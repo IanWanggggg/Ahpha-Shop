@@ -1,0 +1,369 @@
+main {
+  width: 100%;
+  .main-wrapper {
+    width: 95%;
+    margin: 72px auto 0 auto;
+    // display: flex;
+    // flex-direction: column;
+    .checkout {
+      width: 100%;
+      .checkout-title {
+        font-family: "Noto Sans TC";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+      }
+      .steps {
+        width: 100%;
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .connect-line {
+          width: 60px;
+          height: 2px;
+          background-color: #afb1bd;
+          &.checked {
+            background-color: black;
+          }
+        }
+        .step {
+          &:nth-child(1) .circle::after {
+            content: "1";
+          }
+          &:nth-child(3) .circle::after {
+            content: "2";
+          }
+          &:nth-child(5) .circle::after {
+            content: "3";
+          }
+          .circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid #afb1bd;
+            text-align: center;
+            line-height: 32px;
+            color: #afb1bd;
+            font-weight: 700;
+            &.checked,
+            &.active {
+              background-color: black;
+              color: white;
+            }
+            &.checked::after {
+              content: "\2714";
+            }
+          }
+          .step-text {
+            display: none;
+          }
+        }
+      }
+      .form-panel {
+        width: 100%;
+        .form-part {
+          width: 100%;
+          margin-top: 24px;
+          &.d-none {
+            display: none;
+          }
+          .form-title {
+            font-family: "Noto Sans TC";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+          }
+        }
+        .form-part-1 {
+          .form-input {
+            margin-top: 24px;
+            display: grid;
+            grid-auto-columns: 1fr;
+            grid-template-areas:
+              "gender-label name-label"
+              "gender-input name-input"
+              "phone-label phone-label"
+              "phone-input phone-input"
+              "email-label email-label"
+              "email-input email-input"
+              "city-label city-label"
+              "city-input city-input"
+              "address-label address-label"
+              "address-input address-input";
+            label {
+              font-family: "Noto Sans TC";
+              font-style: normal;
+              font-weight: 700;
+              font-size: 12px;
+              color: #808080;
+            }
+            select,
+            input {
+              height: 40px;
+              border-radius: 4px;
+              border: 1px solid #4a4a4a;
+              padding-left: 16px;
+            }
+            select {
+              appearance: none;
+              -moz-appearance: none;
+              -webkit-appearance: none;
+              background: url("/src/img/arrow.png") no-repeat scroll transparent;
+              background-position: right 10%  top 50%;
+              &:invalid {
+                color: #808080;
+              }
+            }
+            .gender-label {
+              grid-area: gender-label;
+              margin-right: 15px;
+            }
+            .name-label {
+              grid-area: name-label;
+              margin-left: 15px;
+            }
+            .gender-input {
+              grid-area: gender-input;
+              margin-top: 8px;
+              margin-right: 15px;
+            }
+            .name-input {
+              grid-area: name-input;
+              margin-top: 8px;
+              margin-left: 15px;
+            }
+            .phone-label {
+              grid-area: phone-label;
+              margin-top: 24px;
+            }
+            .phone-input {
+              grid-area: phone-input;
+              margin-top: 8px;
+            }
+            .email-label {
+              grid-area: email-label;
+              margin-top: 16px;
+            }
+            .email-input {
+              grid-area: email-input;
+              margin-top: 8px;
+            }
+            .city-label {
+              grid-area: city-label;
+              margin-top: 24px;
+            }
+            .city-input {
+              grid-area: city-input;
+              margin-top: 8px;
+            }
+            .address-label {
+              grid-area: address-label;
+              margin-top: 16px;
+            }
+            .address-input {
+              grid-area: address-input;
+              margin-top: 8px;
+            }
+          }
+        }
+        .form-part-2 {
+          .form-input {
+            margin-top: 24px;
+            .delivery-type {
+              border: 1px solid #f0f0f5;
+              border-radius: 4px;
+              margin-bottom: 24px;
+              display: flex;
+              align-items: center;
+              position: relative;
+              &.selected {
+                border: 1px solid black;
+              }
+              .delivery-type-radio {
+                -webkit-appearance: none;
+                margin: 20px;
+                height: 20px;
+                width: 20px;
+                border: 2px solid black;
+                border-radius: 50%;
+                &:checked {
+                  box-shadow: inset 0 0 0 4px black;
+                  border: 1px solid black;
+                }
+              }
+              .delivery-type-text {
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 400;
+                .text-title {
+                  font-weight: 700;
+                  font-size: 14px;
+                }
+                .text-time {
+                  font-size: 12px;
+                }
+                .text-fee {
+                  font-size: 12px;
+                  position: absolute;
+                  top: 13px;
+                  right: 31px;
+                }
+              }
+            }
+          }
+        }
+        .form-part-3 {
+          .form-input {
+            margin-top: 24px;
+            display: grid;
+            grid-auto-columns: 1fr;
+            grid-template-areas:
+              "name-label name-label"
+              "name-input name-input"
+              "num-label num-label"
+              "num-input num-input"
+              "thru-label CVC-label"
+              "thru-input CVC-input";
+            input {
+              height: 40px;
+              border: 1px solid #4a4a4a;
+              border-radius: 4px;
+            }
+            label {
+              font-style: normal;
+              font-weight: 700;
+              font-size: 12px;
+              color: #808080;
+            }
+            .name-on-credit-card-label {
+              grid-area: name-label;
+            }
+            .name-on-credit-card-input {
+              grid-area: name-input;
+              margin-top: 6px;
+            }
+            .credit-card-num-label {
+              grid-area: num-label;
+              margin-top: 24px;
+            }
+            .credit-card-num-input {
+              grid-area: num-input;
+              margin-top: 8px;
+            }
+            .good-thru-label {
+              grid-area: thru-label;
+              margin-top: 24px;
+            }
+            .CVC-label {
+              grid-area: CVC-label;
+              margin-top: 24px;
+            }
+            .good-thru-input {
+              grid-area: thru-input;
+              margin-top: 8px;
+              margin-right: 15px;
+            }
+            .CVC-input {
+              grid-area: CVC-input;
+              margin-top: 8px;
+              margin-left: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 375px) {
+  main {
+    width: 100%;
+    .main-wrapper {
+      width: 80%;
+      .checkout {
+        margin-top: 80px;
+        width: 1fr;
+        padding-bottom: 48px;
+        .steps {
+          margin-bottom: 64px;
+          .step {
+            display: flex;
+            align-items: center;
+            .step-text {
+              display: block;
+              margin-left: 8px;
+              font-weight: 400;
+              font-size: 16px;
+            }
+            .circle {
+              width: 24px;
+              height: 24px;
+              line-height: 24px;
+            }
+            .circle.active {
+              background-color: #fff;
+              color: black;
+              border: 1px solid black;
+            }
+          }
+        }
+        .form-panel {
+          .form-part-1 {
+            .form-input {
+              grid-template-areas:
+                "gender-label gender-label name-label name-label name-label name-label"
+                "gender-input gender-input name-input name-input name-input name-input"
+                "phone-label phone-label phone-label email-label email-label email-label"
+                "phone-input phone-input phone-input email-input email-input email-input"
+                "city-label city-label address-label address-label address-label address-label"
+                "city-input city-input address-input address-input address-input address-input";
+              .gender-input {
+                margin-right: 15px;
+              }
+              .name-input {
+                margin-left: 15px;
+              }
+              .phone-input {
+                margin-right: 15px;
+              }
+              .email-input {
+                margin-left: 15px;
+              }
+              .city-input {
+                margin-right: 15px;
+              }
+              .address-input {
+                margin-left: 15px;
+              }
+            }
+          }
+          .form-part-2 {
+            .form-input {
+              label {
+                width: 100%;
+                .delivery-type {
+                  width: 80%;
+                }
+              }
+            }
+          }
+          .form-part-3 {
+            .form-input {
+              grid-template-areas:
+                "name-label name-label name-label name-label . ."
+                "name-input name-input name-input name-input . ."
+                "num-label num-label num-label num-label . ."
+                "num-input num-input num-input num-input . ."
+                "thru-label thru-label thru-label CVC-label CVC-label CVC-label"
+                "thru-input thru-input thru-input CVC-input CVC-input CVC-input";
+              input {
+                padding: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
