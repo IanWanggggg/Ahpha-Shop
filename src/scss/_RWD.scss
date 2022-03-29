@@ -1,0 +1,207 @@
+@media screen and (min-width: 375px) {
+  header {
+    all: unset;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    height: 60px;
+    width: 100%;
+    .header-wrapper {
+      all: unset;
+      height: 100%;
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      position: relative;
+      align-items: center;
+      .hamburger {
+        display: none;
+      }
+      .nav-bar {
+        all: unset;
+        display: flex;
+        width: 35%;
+        position: absolute;
+        left: 0;
+        .nav {
+          all: unset;
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          .nav-item {
+            all: unset;
+            a {
+              all: unset;
+              text-decoration: none;
+              color: black;
+              font-family: "Noto Sans TC";
+              font-style: normal;
+              font-weight: 500;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      .logo {
+        all: unset;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        .logo-img {
+          height: 30px;
+        }
+      }
+      .function-icons {
+        all: unset;
+        position: absolute;
+        right: 0;
+        width: 132px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+  main {
+    width: 100%;
+    .main-wrapper {
+      width: 80%;
+      display: grid;
+      grid-column-gap: 10%;
+      grid-template-areas:
+        "checkout cart"
+        "btn cart";
+      .checkout {
+        grid-area: checkout;
+        width: 1fr;
+        margin-top: 80px;
+        padding-bottom: 48px;
+        .steps {
+          margin-bottom: 64px;
+          .step {
+            display: flex;
+            align-items: center;
+            .step-text {
+              display: block;
+              margin-left: 8px;
+              font-weight: 400;
+              font-size: 16px;
+            }
+            .circle {
+              width: 24px;
+              height: 24px;
+              line-height: 24px;
+            }
+            .circle.active {
+              background-color: #fff;
+              color: black;
+              border: 1px solid black;
+            }
+          }
+        }
+        .form-panel {
+          .form-part-1 {
+            .form-input {
+              grid-template-areas:
+                "gender-label gender-label name-label name-label name-label name-label"
+                "gender-input gender-input name-input name-input name-input name-input"
+                "phone-label phone-label phone-label email-label email-label email-label"
+                "phone-input phone-input phone-input email-input email-input email-input"
+                "city-label city-label address-label address-label address-label address-label"
+                "city-input city-input address-input address-input address-input address-input";
+              .gender-input {
+                margin-right: 15px;
+              }
+              .name-input {
+                margin-left: 15px;
+              }
+              .phone-input {
+                margin-right: 15px;
+              }
+              .email-input {
+                margin-left: 15px;
+              }
+              .city-input {
+                margin-right: 15px;
+              }
+              .address-input {
+                margin-left: 15px;
+              }
+            }
+          }
+          .form-part-2 {
+            .form-input {
+              label {
+                width: 100%;
+                .delivery-type {
+                  width: 80%;
+                }
+              }
+            }
+          }
+          .form-part-3 {
+            .form-input {
+              grid-template-areas:
+                "name-label name-label name-label name-label . ."
+                "name-input name-input name-input name-input . ."
+                "num-label num-label num-label num-label . ."
+                "num-input num-input num-input num-input . ."
+                "thru-label thru-label thru-label CVC-label CVC-label CVC-label"
+                "thru-input thru-input thru-input CVC-input CVC-input CVC-input";
+              input {
+                padding: 18px;
+              }
+            }
+          }
+        }
+      }
+      .cart {
+        grid-area: cart;
+        width: 1fr;
+        margin-top: 80px;
+        padding: 32px 24px;
+        .cart-title {
+          display: block;
+          font-weight: 700;
+          font-size: 18px;
+          margin-bottom: 32px;
+        }
+        .cart-goods {
+          .cart-good {
+            justify-content: flex-start;
+            align-items: flex-start;
+            .good-text {
+              flex: 1;
+              display: block;
+              position: relative;
+              .good-name {
+                position: relative;
+                left: 21px;
+                top: 0;
+              }
+              .good-price {
+                position: absolute;
+                right: 0;
+                top: 0;
+              }
+              .good-amount {
+                position: relative;
+                top: 50%;
+                left: 21px;
+              }
+            }
+          }
+        }
+      }
+      .control-btn {
+        grid-area: btn;
+        width: 1fr;
+        border-top: 2px solid #e6e6eb;
+      }
+    }
+  }
+  footer {
+    display: flex;
+  }
+}

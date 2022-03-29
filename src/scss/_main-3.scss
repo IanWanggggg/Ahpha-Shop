@@ -1,62 +1,58 @@
-main {
-  .main-wrapper {
-    .control-btn {
-      padding: 24px 0;
-      margin-top: 32px;
-      width: 100%;
-      display: grid;
-      grid-auto-flow: column;
-      grid-gap: 10%;
-      button {
-        width: 1fr;
-        height: 46px;
-        border-radius: 8px;
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        border: 0;
-        &:hover {
-          cursor: pointer;
-        }
-        &.d-none {
-          display: none;
-        }
-      }
-      .btn-previous {
-        background-color: white;
-        color: black;
-        text-align: left;
-      }
-      .btn-next {
-        background-color: #f67599;
-        color: white;
-      }
+.control-btn {
+  padding: 24px 0;
+  margin-top: 32px;
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 10%;
+  button {
+    width: 1fr;
+    height: 46px;
+    border-radius: 8px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    border: 0;
+    &:hover {
+      cursor: pointer;
     }
+    &.d-none {
+      display: none;
+    }
+  }
+  .btn-previous {
+    background-color: white;
+    color: black;
+    text-align: left;
+  }
+  .btn-next {
+    background-color: #f67599;
+    color: white;
   }
 }
 
-@media screen and (min-width:375px){
-  main {
-    .main-wrapper {
-      display: grid;
-      grid-column-gap: 10%;
-      grid-template-areas: 
-      "checkout cart"
-      "btn cart";
-      .checkout {
-        grid-area: checkout;
-        width: 1fr;
-      }
-      .cart {
-        grid-area: cart;
-        width: 1fr;
-      }
-      .control-btn {
-        grid-area: btn;
-        width: 1fr;
-        border-top: 2px solid #e6e6eb;
-      }
-    }
-  }
-}
+// @media screen and (min-width: 375px) {
+//   main {
+//     .main-wrapper {
+//       display: grid;
+//       grid-column-gap: 10%;
+//       grid-template-areas:
+//         "checkout cart"
+//         "btn cart";
+//       .checkout {
+//         grid-area: checkout;
+//         width: 1fr;
+//       }
+//       .cart {
+//         grid-area: cart;
+//         width: 1fr;
+//       }
+//       .control-btn {
+//         grid-area: btn;
+//         width: 1fr;
+//         border-top: 2px solid #e6e6eb;
+//       }
+//     }
+//   }
+// }

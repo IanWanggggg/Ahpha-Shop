@@ -87,7 +87,7 @@ form_part_2.addEventListener('click', function (event) {
       delivery_fee.innerText = "免費"
     }
     else {
-      delivery_fee.innerText = delivery_fee_checked
+      delivery_fee.innerText = "$ " + delivery_fee_checked
     }
     refreshAllFee()
   }

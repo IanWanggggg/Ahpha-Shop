@@ -73,69 +73,69 @@ header {
   }
 }
 
-@media screen and (min-width: 375px) {
-  header {
-    all: unset;
-    background-color: white;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    height: 60px;
-    width: 100%;
-    .header-wrapper {
-      all: unset;
-      height: 100%;
-      width: 80%;
-      margin: 0 auto;
-      display: flex;
-      position: relative;
-      align-items: center;
-      .hamburger {
-        display: none;
-      }
-      .nav-bar {
-        all: unset;
-        display: flex;
-        width: 35%;
-        position: absolute;
-        left: 0;
-        .nav {
-          all: unset;
-          display: flex;
-          width: 100%;
-          justify-content: space-between;
-          .nav-item {
-            all: unset;
-            a {
-              all: unset;
-              text-decoration: none;
-              color: black;
-              font-family: "Noto Sans TC";
-              font-style: normal;
-              font-weight: 500;
-              font-size: 16px;
-            }
-          }
-        }
-      }
-      .logo {
-        all: unset;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        .logo-img {
-          height: 30px;;
-        }
-      }
-      .function-icons {
-        all: unset;
-        position: absolute;
-        right: 0;
-        width: 132px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-    }
-  }
-}
+// @media screen and (min-width: 375px) {
+//   header {
+//     all: unset;
+//     background-color: white;
+//     position: fixed;
+//     top: 0;
+//     z-index: 999;
+//     height: 60px;
+//     width: 100%;
+//     .header-wrapper {
+//       all: unset;
+//       height: 100%;
+//       width: 80%;
+//       margin: 0 auto;
+//       display: flex;
+//       position: relative;
+//       align-items: center;
+//       .hamburger {
+//         display: none;
+//       }
+//       .nav-bar {
+//         all: unset;
+//         display: flex;
+//         width: 35%;
+//         position: absolute;
+//         left: 0;
+//         .nav {
+//           all: unset;
+//           display: flex;
+//           width: 100%;
+//           justify-content: space-between;
+//           .nav-item {
+//             all: unset;
+//             a {
+//               all: unset;
+//               text-decoration: none;
+//               color: black;
+//               font-family: "Noto Sans TC";
+//               font-style: normal;
+//               font-weight: 500;
+//               font-size: 16px;
+//             }
+//           }
+//         }
+//       }
+//       .logo {
+//         all: unset;
+//         position: absolute;
+//         left: 50%;
+//         transform: translateX(-50%);
+//         .logo-img {
+//           height: 30px;;
+//         }
+//       }
+//       .function-icons {
+//         all: unset;
+//         position: absolute;
+//         right: 0;
+//         width: 132px;
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//       }
+//     }
+//   }
+// }
