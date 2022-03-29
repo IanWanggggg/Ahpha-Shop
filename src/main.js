@@ -15,7 +15,6 @@ const form_part_2 = document.querySelector(".form-part-2")
 
 let nowStep = 0
 
-console.log(steps)
 
 function stepControl(event) {
   event.preventDefault()
@@ -65,25 +64,31 @@ function stepControl(event) {
   }
 }
 
-function refreshAllFee(){
-  const allFee = (3999 * good_1_amount.innerText) + (1299 * good_2_amount.innerText) + (Number(delivery_fee.innerText))
-  total_fee.innerText = allFee
+function refreshAllFee() {
+  const delivery_fee_checked = document.querySelector(".delivery-type-radio:checked").value
+  const allFee = (3999 * good_1_amount.innerText) + (1299 * good_2_amount.innerText) + (Number(delivery_fee_checked))
+  total_fee.innerText = "$ " + allFee
 }
 
 function setGoodsAmount(event) {
   if (event.target.matches(".btn-plus")) {
-    event.target.previousElementSibling.innerText ++
+    event.target.previousElementSibling.innerText++
   }
-  else if ((event.target.matches('.btn-minus')) && (event.target.nextElementSibling.innerText > 0)){
-    event.target.nextElementSibling.innerText --
+  else if ((event.target.matches('.btn-minus')) && (event.target.nextElementSibling.innerText > 0)) {
+    event.target.nextElementSibling.innerText--
   }
   refreshAllFee()
 }
 
-form_part_2.addEventListener('click', function(event){
-  if (event.target.matches('.delivery-type-radio')){
-    const delivery_fee_checked = document.querySelector(".delivery-type-radio:checked").value
-    delivery_fee.innerText = delivery_fee_checked
+form_part_2.addEventListener('click', function (event) {
+  const delivery_fee_checked = document.querySelector(".delivery-type-radio:checked").value
+  if (event.target.matches('.delivery-type-radio')) {
+    if (delivery_fee_checked == 0){
+      delivery_fee.innerText = "免費"
+    }
+    else {
+      delivery_fee.innerText = delivery_fee_checked
+    }
     refreshAllFee()
   }
 })
