@@ -82,6 +82,7 @@ function setGoodsAmount(event) {
 
 form_part_2.addEventListener('click', function (event) {
   const delivery_fee_checked = document.querySelector(".delivery-type-radio:checked").value
+  const nowSelect = document.querySelector(".selected")
   if (event.target.matches('.delivery-type-radio')) {
     if (delivery_fee_checked == 0){
       delivery_fee.innerText = "免費"
@@ -89,6 +90,8 @@ form_part_2.addEventListener('click', function (event) {
     else {
       delivery_fee.innerText = "$ " + delivery_fee_checked
     }
+    nowSelect.classList.remove('selected')
+    event.target.parentElement.classList.add('selected')
     refreshAllFee()
   }
 })
