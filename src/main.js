@@ -1,6 +1,8 @@
 import './scss/main.scss'
 
 const steps = document.querySelectorAll(".circle")
+const connect_lines = document.querySelectorAll(".connect-line")
+const step_texts = document.querySelectorAll(".step-text")
 const formParts = document.querySelectorAll(".form-part")
 const preBtn = document.querySelector('.btn-previous')
 const nextBtn = document.querySelector('.btn-next')
@@ -11,6 +13,8 @@ const good_2_amount = document.querySelector('.good-2-amount-num')
 const delivery_fee = document.querySelector('.delivery-fee-num')
 const total_fee = document.querySelector('.total-fee-num')
 const form_part_2 = document.querySelector(".form-part-2")
+const dark_theme_btn = document.querySelector(".dark-theme-btn")
+const body = document.querySelector('body')
 
 
 let nowStep = 0
@@ -22,6 +26,10 @@ function stepControl(event) {
     steps[nowStep].classList.remove('active')
     steps[nowStep].classList.add('checked')
     steps[nowStep + 1].classList.add('active')
+    step_texts[nowStep].classList.remove('active')
+    step_texts[nowStep].classList.add('checked')
+    step_texts[nowStep + 1].classList.add('active')
+    connect_lines[nowStep].classList.add('checked')
     formParts[nowStep].classList.add('d-none')
     formParts[nowStep + 1].classList.remove('d-none')
     preBtn.classList.remove('d-none')
@@ -31,6 +39,10 @@ function stepControl(event) {
     steps[nowStep].classList.remove('active')
     steps[nowStep].classList.add('checked')
     steps[nowStep + 1].classList.add('active')
+    step_texts[nowStep].classList.remove('active')
+    step_texts[nowStep].classList.add('checked')
+    step_texts[nowStep + 1].classList.add('active')
+    connect_lines[nowStep].classList.add('checked')
     formParts[nowStep].classList.add('d-none')
     formParts[nowStep + 1].classList.remove('d-none')
     nowStep++
@@ -40,6 +52,10 @@ function stepControl(event) {
     steps[nowStep].classList.remove('active')
     steps[nowStep - 1].classList.remove('checked')
     steps[nowStep - 1].classList.add('active')
+    step_texts[nowStep].classList.remove('active')
+    step_texts[nowStep - 1].classList.remove('checked')
+    step_texts[nowStep - 1].classList.add('active')
+    connect_lines[nowStep - 1].classList.remove('checked')
     formParts[nowStep].classList.add('d-none')
     formParts[nowStep - 1].classList.remove('d-none')
     nowStep--
@@ -49,18 +65,14 @@ function stepControl(event) {
     steps[nowStep].classList.remove('active')
     steps[nowStep - 1].classList.remove('checked')
     steps[nowStep - 1].classList.add('active')
+    step_texts[nowStep].classList.remove('active')
+    step_texts[nowStep - 1].classList.remove('checked')
+    step_texts[nowStep - 1].classList.add('active')
+    connect_lines[nowStep - 1].classList.remove('checked')
     formParts[nowStep].classList.add('d-none')
     formParts[nowStep - 1].classList.remove('d-none')
     nowStep--
     nextBtn.innerText = '下一步 →'
-  }
-  else if ((event.target.matches(".btn-previous")) && (nowStep > 0)) {
-    steps[nowStep].classList.remove('active')
-    steps[nowStep - 1].classList.remove('checked')
-    steps[nowStep - 1].classList.add('active')
-    formParts[nowStep].classList.add('d-none')
-    formParts[nowStep - 1].classList.remove('d-none')
-    nowStep--
   }
 }
 
@@ -84,7 +96,7 @@ form_part_2.addEventListener('click', function (event) {
   const delivery_fee_checked = document.querySelector(".delivery-type-radio:checked").value
   const nowSelect = document.querySelector(".selected")
   if (event.target.matches('.delivery-type-radio')) {
-    if (delivery_fee_checked == 0){
+    if (delivery_fee_checked == 0) {
       delivery_fee.innerText = "免費"
     }
     else {
@@ -98,3 +110,7 @@ form_part_2.addEventListener('click', function (event) {
 
 btnControl.addEventListener('click', stepControl)
 cart.addEventListener('click', setGoodsAmount)
+
+dark_theme_btn.addEventListener('click', function(){
+  body.classList.toggle('dark')
+})

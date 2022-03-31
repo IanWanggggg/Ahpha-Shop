@@ -49,6 +49,10 @@
       }
       .step-text {
         display: none;
+        color: #AFB1BD;
+        &.active, &.checked {
+          color: black;
+        }
       }
     }
   }

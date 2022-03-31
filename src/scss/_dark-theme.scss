@@ -1,0 +1,164 @@
+body.dark {
+  background-color: black;
+
+  header {
+    background-color: black;
+    .header-wrapper {
+      .logo {
+        .logo-img {
+          content: url('/src/img/logo-dark.png');
+        }
+      }
+      .nav-bar {
+        .nav {
+          .nav-item {
+            a {
+              color: white;
+            }
+          }
+        }
+      }
+      .function-icons {
+        .search-img {
+          content: url('/src/img/search-icon-dark.png');
+        }
+        .cart-img {
+          content: url('/src/img/cart-icon-dark.png');
+        }
+        .sun-night-img {
+          content: url('/src/img/sun-icon.png');
+        }
+      }
+    }
+  }
+
+  main {
+    background-color: black;
+    .main-wrapper {
+      .checkout {
+        .checkout-title {
+          color: white;
+        }
+        .steps {
+          .step {
+            .circle {
+              &.active,
+              &.checked {
+                color: white;
+              }
+              &.active {
+                background-color: black;
+                border-color: #ffffff;
+              }
+              &.checked {
+                background-color: #333333;
+                border-color: #333333;
+              }
+            }
+            .step-text {
+              color: rgba(255, 255, 255, 0.4);
+              &.active,
+              &.checked {
+                color: #ffffff;
+              }
+            }
+          }
+          .connect-line {
+            &.checked {
+              background-color: white;
+            }
+          }
+        }
+        .form-panel {
+          .form-part {
+            .form-title {
+              color: white;
+            }
+            .form-input {
+              select,
+              input {
+                color: white;
+              }
+              input {
+                background-color: black;
+              }
+            }
+          }
+          .form-part-2 {
+            .form-input {
+              .delivery-type {
+                border-color: #5e5e5e;
+                &.selected {
+                  border-color: white;
+                }
+                input {
+                  background-color: #333333;
+                  &:checked {
+                    background-color: white;
+                    border-color: #333333;
+                  }
+                }
+                .delivery-type-text {
+                  .text-title {
+                    color: white;
+                  }
+                  .text-time {
+                    color: rgba(255, 255, 255, 0.4);
+                  }
+                  .text-fee {
+                    color: white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .cart {
+        background-color: #383838;
+        .cart-title {
+          color: white;
+        }
+        .cart-goods {
+          border-bottom-color: rgba(255, 255, 255, 0.2);
+          .cart-good {
+            color: white;
+            .good-amount {
+              button {
+                background-color: #808080;
+                color: #333333;
+              }
+            }
+          }
+        }
+        .delivery-fee,
+        .total-fee {
+          color: #ffffff;
+        }
+        .delivery-fee {
+          border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+      .control-btn {
+        button {
+          color: white;
+        }
+        .btn-previous {
+          background-color: black;
+        }
+      }
+    }
+  }
+
+  footer {
+    background-color: #333333;
+    .footer-logo {
+      .logo-img {
+        content: url('/src/img/logo-dark.png');
+      }
+    }
+    .footer-title {
+      color: white;
+    }
+  }
+}
